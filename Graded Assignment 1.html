@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sem 2 Assignment 1</title>
+
+  <style type="text/css">
+#image { position: absolute;; top: 0px; left: 0px; }
+</style>
+
+  <script>
+      function changeImage() {
+        var x = Math.floor(Math.random()*600);
+        var y = Math.floor(Math.random()*600);
+
+        var obj = document.getElementById('image');
+
+        obj.style.top = x + "px";
+        obj.style.left = y + "px";
+      }
+  </script>
+</head>
+<body>
+  <div id="image">
+    <img src="https://image.flaticon.com/icons/svg/34/34768.svg" alt="" onclick="changeImage()" onload="changeImage()" />
+  </div>
+</body>
+</html>

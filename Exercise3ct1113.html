@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function updateOutput() {
+        var txt = document.getElementById("txtUserInput").value;
+        var numchars = txt.length;
+        var txtOutputChar = "";
+        var txtOutputWord = "";
+        var wordCount = 0;
+        var currWord = "";
+
+
+          txtOutputChar += numchars+" characters";
+          document.getElementById("pOutputChar").innerHTML = txtOutputChar;
+
+          for (var i=0; i<numchars; i++) {
+            var currLetter = txt.substr(i,1);
+            if (currLetter == " ") {
+              wordCount = wordCount + 1;
+            }
+              txtOutputWord = wordCount+" words.";
+              document.getElementById("pOutputWord").innerHTML = txtOutputWord;
+
+          }
+      }
+    </script>
+  </head>
+  <body>
+    <textarea id='txtUserInput' onkeyup="updateOutput();" value=""></textarea><br>
+    <p id='pOutputChar'>
+      The number of characters will be shown here. <br>
+      The number of Words will be shown here.
+    </p>
+    <p id='pOutputWord'>
+    </p>
+  </body>
+</html>

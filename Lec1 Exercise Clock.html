@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function fixNumber(n) {
+		if (n>=10)
+			return n;
+		else {
+			return "0"+n;
+		}
+	}
+
+	function updateClock() {
+		// needs code here!
+		var myDate = new Date();
+		var h = myDate.getHours();
+		var m = myDate.getMinutes();
+		var s = myDate.getSeconds();
+		var txt = fixNumber(h)+":"+fixNumber(m)+":"+fixNumber(s);
+		document.getElementById('theClock').innerHTML = txt;
+		window.setTimeout(updateClock, 1000);
+	}
+</script>
+<body onload="updateClock();">
+	<p id="theClock" style="text-align:center; font-size:120px;">00:00:00</p>
+</body>
